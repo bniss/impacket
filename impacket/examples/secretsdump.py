@@ -1249,7 +1249,7 @@ class SAMHashes(OfflineRegistry):
                 lmHash = ntlm.LMOWFv1('','')
             if ntHash == b'':
                 ntHash = ntlm.NTOWFv1('','')
-            
+                
             answer =  "%s:%d:%s:%s:%s::" % (userName, rid, hexlify(lmHash).decode('utf-8'), hexlify(ntHash).decode('utf-8'), userPasswordHint)
             self.__itemsFound[rid] = answer
             self.__perSecretCallback(answer)
